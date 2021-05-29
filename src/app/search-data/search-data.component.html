@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<body>
+  <!-- site -->
+  <div class="site">
+
+    <!-- site__body -->
+    <div class="site__body">
+
+      <div class="container">
+        <div class="shop-layout shop-layout--sidebar--start">
+
+          <div class="shop-layout__content">
+            <div class="block">
+              <div class="products-view">
+                <div class="products-view__options">
+                  <!-- <div class="view-options view-options--offcanvas--mobile">
+                    <div class="view-options__filters-button"><button type="button" class="filters-button"><svg
+                          class="filters-button__icon" width="16px" height="16px">
+                          <use xlink:href="assets/images/sprite.svg#filters-16"></use>
+                        </svg> <span class="filters-button__title">Filters</span> <span
+                          class="filters-button__counter">3</span></button></div>
+                    <div class="view-options__layout">
+                      <div class="layout-switcher">
+                        <div class="layout-switcher__list"><button data-layout="grid-3-sidebar"
+                            data-with-features="false" title="Grid" type="button"
+                            class="layout-switcher__button layout-switcher__button--active"><svg width="16px"
+                              height="16px">
+                              <use xlink:href="assets/images/sprite.svg#layout-grid-16x16"></use>
+                            </svg></button> <button data-layout="grid-3-sidebar" data-with-features="true"
+                            title="Grid With Features" type="button" class="layout-switcher__button"><svg width="16px"
+                              height="16px">
+                              <use xlink:href="assets/images/sprite.svg#layout-grid-with-details-16x16"></use>
+                            </svg></button> <button data-layout="list" data-with-features="false" title="List"
+                            type="button" class="layout-switcher__button"><svg width="16px" height="16px">
+                              <use xlink:href="assets/images/sprite.svg#layout-list-16x16"></use>
+                            </svg></button></div>
+                      </div>
+                    </div>
+
+                  </div> -->
+                </div>
+                <div class="products-view__list products-list" data-layout="grid-3-sidebar" data-with-features="false">
+                  <div class="products-list__body" >
+
+
+
+
+                    <div class="products-list__item" *ngFor="let item of prodData">
+                      <div class="product-card" >
+                        <button class="product-card__quickview" type="button" (click)="openDialog(item)" ><svg width="16px"
+                            height="16px">
+                            <use xlink:href="assets/images/sprite.svg#quickview-16"></use>
+                          </svg> <span class="fake-svg-icon"></span></button>
+                        <!-- <div class="product-card__badges-list">
+                          <div class="product-card__badge product-card__badge--new">New</div>
+                        </div> -->
+                        <div class="product-card__image">
+                          <a href="product.html">
+                          <img src="{{imgpath}}{{item.product_img}}" style="height: 200px;width: 200px;"
+                              alt=""></a>
+                            </div>
+                        <div class="product-card__info">
+                          <div class="product-card__name"><a href="product.html">
+                          {{item.product_name}}
+                          </a></div>
+
+                          <ul class="product-card__features-list">
+                            <li>{{item.product_desc}}</li>
+                          </ul>
+                        </div>
+                        <div class="product-card__actions">
+                          <div class="product-card__availability">Availability: <span class="text-success">In
+                              Stock</span></div>
+                          <div class="product-card__prices">{{item.product_price | currency:'INR'}}</div>
+                          <div class="product-card__buttons">
+                            <button class="btn btn-primary product-card__addtocart"
+                            (click)="onAddToCart(item)"
+                              type="button">Add To Cart</button>
+                               <button
+                              class="btn btn-secondary product-card__addtocart product-card__addtocart--list"
+                              type="button">Add To Cart</button> <button
+                              class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__wishlist"
+                              type="button"><svg width="16px" height="16px">
+                                <use xlink:href="assets/images/sprite.svg#wishlist-16"></use>
+                              </svg> <span class="fake-svg-icon fake-svg-icon--wishlist-16"></span></button> <button
+                              class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__compare"
+                              type="button"><svg width="16px" height="16px">
+                                <use xlink:href="assets/images/sprite.svg#compare-16"></use>
+                              </svg> <span class="fake-svg-icon fake-svg-icon--compare-16"></span></button></div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+                <div class="products-view__pagination">
+                  <ul class="pagination justify-content-center">
+                    <li class="page-item disabled"><a class="page-link page-link--with-arrow" href="#"
+                        aria-label="Previous"><svg class="page-link__arrow page-link__arrow--left" aria-hidden="true"
+                          width="8px" height="13px">
+                          <use xlink:href="assets/images/sprite.svg#arrow-rounded-left-8x13"></use>
+                        </svg></a></li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item active"><a class="page-link" href="#">2 <span
+                          class="sr-only">(current)</span></a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link page-link--with-arrow" href="#" aria-label="Next"><svg
+                          class="page-link__arrow page-link__arrow--right" aria-hidden="true" width="8px" height="13px">
+                          <use xlink:href="assets/images/sprite.svg#arrow-rounded-right-8x13"></use>
+                        </svg></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><!-- site__body / end -->
+  </div><!-- site / end -->
+
+</body>
+<!-- Mirrored from stroyka.html.themeforest.scompiler.ru/themes/black-ltr/shop-grid-3-columns-sidebar.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 12 Feb 2020 05:53:19 GMT -->
+
+</html>
+

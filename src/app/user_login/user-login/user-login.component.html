@@ -1,0 +1,136 @@
+
+  <div class="site">
+    <!-- site__body -->
+          <div style="position: relative;left:20%">
+            <h1 style="font-size:55px;color: darkred;">Welcome &nbsp;To&nbsp; Wonder &nbsp; Books&nbsp; and &nbsp; Stationers</h1>
+      </div>
+    <div class="site__body">
+
+      <div class="block">
+        <div class="container" style="position: relative;top:60px">
+
+          <div class="row">
+            <div class="col-md-6 d-flex flex-column">
+              <div class="card flex-grow-1 mb-md-0">
+                <div class="card-body" style="background-color: rgb(161, 150, 225);">
+                  <h3 class="card-title">Login</h3>
+                  <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+                    <div class="form-group">
+                      <label>Email address</label>
+                      <input formControlName="user_email" type="email" class="form-control" placeholder="Enter email">
+                    </div>
+                    <div class="form-group"><label>Password</label>
+                      <input type="password" formControlName="user_password" [type]="hide ? 'password' : 'text'"
+                        class="form-control" placeholder="Password">
+                      <a mat-icon-button matSuffix (click)="onShowPass()">
+                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                      </a>
+
+                      <small class="form-text text-muted">
+                        <a routerLink="/ForgotPassword">Forgot Password?</a></small>
+                    </div>
+                    <div>
+                      <button type="submit" mat-raised-button
+                        style="font-size: 25px;border:1px solid black;width: 380px;background-color: lightgreen;color: black;"
+                        mat-flat-button>
+                        LogIn</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 d-flex flex-column mt-4 mt-md-0">
+              <div class="card flex-grow-1 mb-0">
+                <div class="card-body" style="background-color: rgb(185, 211, 187)">
+                  <h3 class="card-title">Register</h3>
+
+                  <form [formGroup]="signUpForm" (ngSubmit)="onSignUp()">
+
+                    <div class="form-group">
+                      Email:
+                      <input class="form-control" formControlName="user_email" placeholder="Enter Your Email">
+                      <label class="alert alert-danger"
+                        *ngIf="signUpForm.get('user_email').hasError('required') && !signUpForm.get('user_email').pristine">Email
+                        is required</label>
+                      <label class="alert alert-danger"
+                        *ngIf="signUpForm.get('user_email').hasError('email') && !signUpForm.get('user_email').pristine">Email
+                        is Invalid</label>
+                    </div>
+                    <div formGroupName="password_group" class="form-group">
+                      Password:
+                      <input class="form-control" type="password" placeholder="Enter Password"
+                        formControlName="user_password">
+                      <input class="form-control" type="password" placeholder="Enter confirm Password"
+                        formControlName="user_confirm_password">
+                      <label class="alert alert-danger"
+                        *ngIf="signUpForm.get('password_group').hasError('PasswordMatch')">Both password and confirm
+                        password should be same.</label>
+                      <label class="alert alert-danger"
+                        *ngIf="signUpForm.get('password_group').get('user_password').hasError('minlength')">Password >
+                        5</label>
+
+                    </div>
+
+
+                    <div class="form-group">
+                      Name:
+                      <input class="form-control" formControlName="customer_name" placeholder="Enter Your Name">
+                      <label class="alert alert-danger"
+                        *ngIf="signUpForm.get('customer_name').hasError('required') && !signUpForm.get('customer_name').pristine">Name
+                        is required</label>
+                      <label class="alert alert-danger"
+                        *ngIf="signUpForm.get('customer_name').hasError('minlength') && !signUpForm.get('customer_name').pristine">Name
+                        shoul be > 5</label>
+                      <label class="alert alert-danger"
+                        *ngIf="signUpForm.get('customer_name').hasError('pattern') && !signUpForm.get('customer_name').pristine">
+                        Only Chars</label>
+                    </div>
+                    <div class="form-group">
+                      Genderr:
+                      <input type="radio" value="Male" checked #g formControlName="customer_gender">Male
+                      <input type="radio" value="Female" #g1 formControlName="customer_gender">Female
+                      <label class="alert alert-danger" *ngIf="signUpForm.get('customer_gender').hasError('required') && !signUpForm.get('customer_gender').pristine" >Gender is required</label>
+                    </div>
+                    <div class="form-group">
+                      Address:
+                      <textarea type="text" class="form-control" formControlName="customer_address"
+                        placeholder="Enter Your Address">
+                      </textarea>
+                        <label class="alert alert-danger" *ngIf="signUpForm.get('customer_address').hasError('required') && !signUpForm.get('customer_address').pristine" >Address is required</label>
+
+                    </div>
+
+                    <div>
+                      Photo(Must be selected):
+                      <input type="file" name="customer_photo" (change)="onChange($event)">
+
+                    </div>
+                    <div class="form-group">
+                      Mobileno:
+                      <input class="form-control" maxlength="10" formControlName="customer_mobileno"
+                        placeholder="Enter Your Mobile No">
+                      <label class="alert alert-danger"
+                        *ngIf="signUpForm.get('customer_mobileno').hasError('required') && !signUpForm.get('customer_mobileno').pristine">mobile
+                        no is required</label>
+                      <label class="alert alert-danger"
+                        *ngIf="signUpForm.get('customer_mobileno').hasError('maxlength') && signUpForm.get('customer_mobileno').hasError('minlength')">only 10 digits</label>
+                        <label class="alert alert-danger"
+                        *ngIf="signUpForm.get('customer_mobileno').hasError('pattern') "> Only digits</label>
+                    </div>
+                    <div class="form-group">
+                      <button mat-raised-button [disabled]="!signUpForm.valid" style="background-color: lightgreen;color:black" type="submit"
+                        class="btn btn-primary">SignUP</button>
+                      <button mat-raised-button type="reset" style="background-color: lightsalmon;color:black"
+                        class="btn btn-primary">Reset</button>
+                    </div>
+
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><!-- site__body / end -->
+
+  </div><!-- site / end -->

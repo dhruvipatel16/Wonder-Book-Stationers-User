@@ -1,0 +1,24 @@
+<div class="container">
+  <h1>Password</h1>
+
+  <form [formGroup]="AdminPassChangeForm" (ngSubmit)="onDone(curpass.value)">
+    <div>
+  <input class="form-control" formControlName="current_password" type="password" placeholder="Enter Your Current Password" #curpass>
+    </div>
+    <br>
+    <div formGroupName="password_group" class="form-group">
+
+      <input class="form-control" type="password" placeholder="Enter New Password" formControlName="user_password"><br>
+      <input class="form-control" type="password" placeholder="Enter Confirm Password" formControlName="user_confirm_password">
+
+      <label class="alert alert-danger" *ngIf="AdminPassChangeForm.get('password_group').hasError('PasswordMatch')">Both
+        password and confirm password should be same.</label>
+      <label class="alert alert-danger"
+        *ngIf="AdminPassChangeForm.get('password_group').get('user_password').hasError('minlength')">Password >5</label>
+    </div>
+    <div class="form-group">
+      <button mat-raised-button color="primary" [disabled]="!AdminPassChangeForm.valid" type="submit">Done</button> |
+      <button mat-raised-button color="warn" (click)="onCancelClick()">Cancel</button>
+    </div>
+  </form>
+</div>

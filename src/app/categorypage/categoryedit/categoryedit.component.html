@@ -1,0 +1,10 @@
+
+<form [formGroup]="CategoryUpdateForm" (ngSubmit)="onCategoryEdit()" class="container">
+  <mat-form-field>
+    <input matInput placeholder="Enter Name" formControlName="category_name"  type="text">
+  </mat-form-field>
+  <br>
+
+    <button type="submit" class="btn btn-primary" >Update</button> |
+    <button type="button" class="btn btn-primary" (click)="onCancel()" >Cancel</button>
+</form>

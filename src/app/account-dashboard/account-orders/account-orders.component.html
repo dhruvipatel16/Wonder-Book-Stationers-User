@@ -1,0 +1,65 @@
+
+<body>
+
+  <div class="site">
+
+    <div class="site__body">
+
+      <div class="block">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-lg-3 d-flex">
+              <div class="account-nav flex-grow-1">
+                <h4 class="account-nav__title">Navigation</h4>
+                <ul>
+                  <li class="account-nav__item"><a routerLink="/nav/AccountDashBoard">Dashboard</a></li>
+                  <li class="account-nav__item"><a routerLink="/nav/edit">Edit Profile</a></li>
+                  <li class="account-nav__item account-nav__item--active"><a routerLink="/nav/orderDetails">Order
+                      History</a></li>
+
+                  <li class="account-nav__item"><a routerLink="/nav/changePassword">Password</a></li>
+                  <li class="account-nav__item"><a (click)="onLogOut()">Logout</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-12 col-lg-9 mt-4 mt-lg-0">
+              <div class="card">
+                <div class="card-header">
+                  <h5>Order History</h5>
+                </div>
+                <div class="card-divider"></div>
+                <div class="card-table">
+                  <div class="table-responsive-sm">
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>Order</th>
+                          <th>Date</th>
+                          <th>Status</th>
+                          <th>Payment Type</th>
+                          <th>Total</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let item of orderData">
+                          <td><a href="#">#{{item.order_id}}</a></td>
+                          <td>{{item.order_date|date}}</td>
+                          <td>{{item.order_status}}</td>
+                          <td>{{item.payment_type}}</td>
+                          <td>{{item.order_amount|currency :'INR'}}</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div class="card-divider"></div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+</body>
+

@@ -1,0 +1,42 @@
+.wordart {
+  font-family: Arial, sans-serif;
+  font-size: 4em;
+  font-weight: bold;
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.wordart.slate {
+  transform: scale(1, 1.5);
+  -webkit-transform: scale(1, 1.5);
+  -moz-transform: scale(1, 1.5);
+  -o-transform: scale(1, 1.5);
+  -ms-transform: scale(1, 1.5);
+}
+.text2{
+  color: rgb(176, 101, 101);
+
+}
+.wordart.slate .text {
+  font-family: Times, 'Times New Roman', serif;
+  font-weight: normal;
+  color: #2F5485;
+  text-shadow: 0.03em 0.03em 0px #B3B3B3;
+}
+
+div.block-slideshow__slide-content1 {
+  top: 160px;
+  width: fit-content;
+
+  background-color: black;
+  color: white;
+  opacity: 0.7;
+}
+div.block-slideshow__slide-button,
+div.block-slideshow__slide-text,
+div.block-slideshow__slide-title {
+  opacity: 0;
+}
+

@@ -1,0 +1,7 @@
+
+Enter Confirmation Code
+
+  Enter 4-digit code that is sent to Your Address
+  <input type="text" #otp1 class="form-control" placeholder="Enter OTP">
+  <!-- On done User gets logged In and can change password from there -->
+  <button (click)="onDoneClick(otp1.value)" mat-raised-button color="primary">Done</button>

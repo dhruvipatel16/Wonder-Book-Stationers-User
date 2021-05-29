@@ -1,0 +1,14 @@
+<div class="container" >
+
+  <form [formGroup]="categoryAddForm" (ngSubmit)="onCategoryAdd()" >
+
+    <div class="form-group" >
+      <input class="form-control" placeholder="Enter Category name" formControlName="category_name" >
+      <label class="alert alert-danger" *ngIf="categoryAddForm.get('category_name').hasError('required') && !categoryAddForm.get('category_name').pristine" >Category Name is required</label>
+    </div>
+    <div class="form-group" >
+      <button [disabled]="!categoryAddForm.valid" type="submit" class="btn btn-primary" >Add Category</button> |
+      <button type="button" class="btn btn-primary" (click)="onCancel()" >Cancel</button>
+    </div>
+  </form>
+</div>

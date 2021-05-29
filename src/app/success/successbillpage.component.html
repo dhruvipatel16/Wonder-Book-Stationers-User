@@ -1,0 +1,146 @@
+<div class="site">
+  <!-- site__body -->
+  <div class="site__body" >
+
+    <div class="container" style="background-color: burlywood;">
+<div class="grid-container">
+  <mat-grid-list cols="2" rowHeight="1000px">
+    <mat-grid-tile colspan="2" rowspan="1">
+      <mat-card class="dashboard-card">
+        <mat-card-header>
+          <!-- <mat-card-title>
+            Products
+          </mat-card-title> -->
+        </mat-card-header>
+        <mat-card-content class="dashboard-card-content">
+          <div>
+            <img src="{{img}}" alt="">
+            <h2>Thank You</h2>
+            <h6 style="font-weight: normal;">Your Order Has Been Recieved</h6>
+            <button (click)="onGoToHome()" type="submit" mat-button>Go to Home</button>
+            <br><br><br>
+            <div class="mat-elevation-z8">
+              <table mat-table [dataSource]="dataSource" >
+
+                <ng-container matColumnDef="order_id">
+                  <th mat-header-cell class="th1" *matHeaderCellDef style="text-align: center;">Order Number</th>
+                  <td mat-cell *matCellDef="let row"> {{row.order_id}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="order_date">
+                  <th mat-header-cell class="th1" *matHeaderCellDef style="text-align: center;"> Order Date </th>
+                  <td mat-cell *matCellDef="let row"> {{row.order_date | date}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="total">
+                  <th mat-header-cell class="th1" *matHeaderCellDef style="text-align: center;">Total</th>
+                  <td mat-cell *matCellDef="let row"> {{row.order_amount | currency:'INR'}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="payment_type">
+                  <th mat-header-cell class="th1" *matHeaderCellDef style="text-align: center;">Payment Method</th>
+                  <td mat-cell *matCellDef="let row"> {{row.payment_type}} </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumnsOrder"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumnsOrder;">
+                </tr>
+              </table>
+            </div>
+            <br><br>
+            <div>
+              <table class="checkout__totals">
+                <thead class="checkout__totals-header">
+                  <tr class="th2">
+                    <th>IMAGE</th>
+                    <th>Product</th>
+                    <th>Qty</th>
+                    <th style="text-align: center;">Total</th>
+                  </tr>
+                </thead>
+                <tbody class="checkout__totals-products">
+                  <tr *ngFor="let item of arrcartItems">
+                    <td><img src="{{imgPath}}{{item.product.product_img}}" height="10%" width="40%"
+                          alt=""></td>
+                    <td>{{item.product.product_name|titlecase}}</td>
+                    <td>{{item.qty}}</td>
+                    <td style="text-align: center;">{{item.product.total|currency:'INR'}}</td>
+                  </tr>
+                </tbody>
+                <tbody class="checkout__totals-subtotals">
+                  <tr>
+                    <th>Subtotal</th>
+                    <td></td>
+                    <td></td>
+                    <td style="text-align: center;">{{GrandTotal | currency:'INR'}}</td>
+                  </tr>
+                  <tr style="text-align: center;">
+                    <th>Shipping</th>
+                    <td></td>
+                    <td></td>
+                    <td style="text-align: center;">30Rs.</td>
+                  </tr>
+                </tbody>
+                <tfoot class="checkout__totals-footer">
+                  <tr>
+                    <th>Total</th>
+                    <td></td>
+                    <td></td>
+                    <td style="text-align: center;">{{ totals | currency:'INR'}}</td>
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
+            <br><br><br>
+            <!-- <button mat-button class="btn" (click)="onClick()" >Clear Cart</button> -->
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+
+  <mat-grid-list cols="2" rowHeight="400px">
+    <mat-grid-tile colspan="1" rowspan="1">
+      <mat-card class="dashboard-card">
+        <mat-card-header>
+          <mat-card-title>
+            Shipping Address
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="dashboard-card-content">
+          <div *ngFor="let item of add">
+            <label class="l1">{{item.customer_name}}</label><br><br>
+            <label class="l2">{{item.shipping_address}}</label><br><br>
+            <mat-label color="primary">PhoneNumber</mat-label>
+            <label class="l3">{{item.customer_mobileno}}</label><br><br>
+            <mat-label color="primary">EmailAddress</mat-label><br>
+            <label class="l4">{{item.fk_user_email}}</label>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+
+    <mat-grid-tile colspan="1" rowspan="1">
+      <mat-card class="dashboard-card">
+        <mat-card-header>
+          <mat-card-title>
+            Billing Address
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="dashboard-card-content">
+          <div *ngFor="let item of add">
+            <label class="l1">{{item.customer_name}}</label><br><br>
+            <label class="l5">{{item.customer_address}}</label><br><br>
+            <mat-label color="primary">PhoneNumber</mat-label>
+            <label class="l3">{{item.customer_mobileno}}</label><br><br>
+            <mat-label color="primary">EmailAddress</mat-label><br>
+            <label class="l4">{{item.fk_user_email}}</label>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
+</div>
+</div>
+</div>

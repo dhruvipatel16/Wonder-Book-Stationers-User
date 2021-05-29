@@ -1,0 +1,94 @@
+
+<body>
+  <!-- site -->
+  <div class="site">
+
+    <div class="site__body">
+
+      <div class="block">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-lg-3 d-flex">
+              <div class="account-nav flex-grow-1">
+                <h4 class="account-nav__title">Navigation</h4>
+                <ul>
+                  <li class="account-nav__item account-nav__item--active"><a routerLink="/nav/AccountDashBoard">Dashboard</a>
+                  </li>
+                  <li class="account-nav__item"><a routerLink="/nav/edit">Edit Profile</a></li>
+                  <li class="account-nav__item"><a routerLink="/nav/orderDetails">Order History</a></li>
+
+                  <li class="account-nav__item"><a routerLink="/nav/changePassword">Password</a></li>
+                  <li class="account-nav__item"><a (click)="onLogOut()">Logout</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-12 col-lg-9 mt-4 mt-lg-0">
+              <div class="dashboard" *ngFor="let item of custData">
+                <div class="dashboard__profile card profile-card" >
+                  <div class="card-body profile-card__body">
+                    <div class="profile-card__avatar">
+                      <img src="{{imgPath}}{{item.customer_photo}}" alt=""></div>
+                    <div class="profile-card__name">{{item.customer_name}}</div>
+                    <div class="profile-card__email">{{item.fk_user_email}}</div>
+                    <div class="profile-card__edit">
+                      <a routerLink="/nav/e dit" class="btn btn-secondary btn-sm">Edit
+                        Profile</a></div>
+                  </div>
+                </div>
+                <div class="dashboard__address card address-card address-card--featured">
+                  <div class="address-card__badge">Address</div>
+                  <div class="address-card__body">
+                    <div class="address-card__name"></div>
+                    <div class="address-card__row">{{item.customer_address}}
+                    </div>
+                    <div class="address-card__row">
+                      <div class="address-card__row-title">Phone Number</div>
+                      <div class="address-card__row-content">{{item.customer_mobileno}}</div>
+                    </div>
+                    <div class="address-card__row">
+                      <div class="address-card__row-title">Email Address</div>
+                      <div class="address-card__row-content">{{item.fk_user_email}}</div>
+                    </div>
+                    <div class="address-card__footer"><a routerLink="/nav/edit">Edit Address</a></div>
+                  </div>
+                </div>
+                <div class="dashboard__orders card">
+                  <div class="card-header">
+                    <h5>Recent Orders</h5>
+                  </div>
+                  <div class="card-divider"></div>
+                  <div class="card-table">
+                    <div class="table-responsive-sm">
+                      <table>
+                        <thead>
+                          <tr>
+                            <th>Order</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                            <th>Total</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor="let item of orderData">
+                            <td><a href="#">#{{item.order_id}}</a></td>
+                            <td>{{item.order_date|date}}</td>
+                            <td>{{item.order_status}}</td>
+                            <td>{{item.order_amount |currency:'INR'}}</td>
+                          </tr>
+
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><!-- site__body / end -->
+    <!-- site__footer -->
+
+  </div><!-- site / end -->
+
+</body>

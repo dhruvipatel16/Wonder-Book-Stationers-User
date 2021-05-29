@@ -1,0 +1,151 @@
+  <!-- site -->
+  <div class="site">
+
+    <!-- site__body -->
+    <div class="site__body">
+      <div class="page-header">
+        <div class="page-header__container container">
+            <div class="page-header__breadcrumb">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index.html"></a> <svg class="breadcrumb-arrow"
+                                width="6px" height="9px">
+                                <use xlink:href="assets/images/sprite.svg#arrow-rounded-right-6x9"></use>
+                            </svg></li>
+
+                    </ol>
+                </nav>
+            </div>
+            <div class="page-header__title">
+                <h1>Checkout</h1>
+            </div>
+        </div>
+    </div>
+      <div class="checkout block">
+        <div class="container">
+          <div class="row">
+            <!-- <div class="col-12 mb-3">
+              <div class="alert alert-lg alert-primary">Returning customer? <a routerLink="/nav/login">Click here to
+                  login</a></div>
+            </div> -->
+            <div class="col-12 col-lg-6 col-xl-7">
+              <div class="card mb-lg-0">
+                <div class="card-body">
+                  <h3 class="card-title">Billing details</h3>
+                  <div class="block-features__subtitle">(if not entered then saved Address will be taken as Shipping Address)</div>
+                  <div class="form-group">
+                    <label for="checkout-country">Country</label>
+                      India</div>
+                  <div class="form-group">
+                    <label for="checkout-street-address">Appartment and Street Address</label>
+                    <textarea (keyup)="onKeyUp(add1.value)" style="width: 350px;height:100px;" #add1 class="form-control" id="checkout-street-address" placeholder="Street Address"></textarea>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="checkout-city">Town / City</label>
+                    <input type="text" value="Ahmedabad" readonly class="form-control" id="checkout-city"></div>
+                  <div class="form-group"><label for="checkout-state">State</label>
+                    <input type="text"
+                      class="form-control" readonly value="Gujarat" id="checkout-state"></div>
+
+                  <div class="form-row">
+                    </div>
+                  <div class="form-group">
+
+                  </div>
+                </div>
+                <div class="card-divider"></div>
+                <div class="card-body">
+
+                  <div class="form-group"><label for="checkout-comment">Order notes <span
+                        class="text-muted">(Optional)</span></label> <textarea id="checkout-comment"
+                        (keyup)="onOrderNotes(on.value)" #on
+                      class="form-control" rows="4"></textarea></div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-lg-6 col-xl-5 mt-4 mt-lg-0">
+              <div class="card mb-0">
+                <div class="card-body">
+                  <h3 cl  ass="card-title">Your Order</h3>
+                  <table class="checkout__totals">
+                    <thead class="checkout__totals-header">
+                      <tr>
+                        <th>Product</th>
+                        <th>Qty</th>
+                        <th>Price</th>
+                        <th>Total</th>
+                      </tr>
+                    </thead>
+                    <tbody class="checkout__totals-products" >
+                      <tr *ngFor="let item of arrcartItems" >
+                        <td>{{item.product.product_name|titlecase}}</td>
+                        <td>{{item.qty}}</td>
+                        <td>{{item.product.product_price|currency:'INR'}}</td>
+                        <td>{{item.product.total|currency:'INR'}}</td>
+                      </tr>
+                    </tbody>
+                    <tbody class="checkout__totals-subtotals">
+                      <tr >
+                        <th>Subtotal</th>
+                        <td>{{GrandTotal | currency:'INR'}}</td>
+                      </tr>
+                      <tr>
+                        <th>Shipping</th>
+                        <td>30Rs.</td>
+                      </tr>
+                    </tbody>
+                    <tfoot class="checkout__totals-footer">
+                      <tr>
+                        <th>Total</th>
+                        <td>{{ totals | currency:'INR'}}</td>
+                      </tr>
+                    </tfoot>
+                  </table>
+                  <div class="payment-methods">
+                    <ul class="payment-methods__list">
+
+
+
+                      <!-- <li class="payment-methods__item">
+                        <label class="payment-methods__item-header"><span
+                            class="payment-methods__item-radio input-radio"><span class="input-radio__body"><input
+                                class="input-radio__input" name="checkout_payment_method" type="radio"> <span
+                                class="input-radio__circle"></span> </span></span><span
+                            class="payment-methods__item-title">PayPal</span></label>
+                        <div class="payment-methods__item-container">
+                          <div class="payment-methods__item-description text-muted">Pay via
+                            PayPal; you can pay with your credit card if you don’t have a
+                            PayPal account.</div>
+                        </div>
+                      </li> -->
+                      <li>
+                        <div #paypal>
+
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <!-- <div class="checkout__agree form-group">
+                    <div class="form-check"><span class="form-check-input input-check"><span
+                          class="input-check__body"><input class="input-check__input" type="checkbox"
+                            id="checkout-terms"> <span class="input-check__box"></span> <svg class="input-check__icon"
+                            width="9px" height="7px">
+                            <use xlink:href="assets/images/sprite.svg#check-9x7"></use>
+                          </svg> </span></span><label class="form-check-label" for="checkout-terms">I have read and
+                        agree to the website <a target="_blank" href="terms-and-conditions.html">terms and
+                          conditions</a>*</label></div>
+                  </div> -->
+                  <button [disabled]="placeOrderButton" (click)="onPlaceOrder()" type="submit" class="btn btn-primary btn-xl btn-block">
+                    Place
+                    Order(COD)</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><!-- site__body / end -->
+
+
+  </div><!-- site / end -->

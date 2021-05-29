@@ -1,0 +1,42 @@
+.example-card {
+  width: 500px;
+  height:500px;
+  color: black;
+  position: relative;
+  top:20%;
+  left:35%;
+
+  background-color: rgb(51, 6, 6);
+  border-radius: 10%;
+
+}
+div.site{
+  background-color: rgb(242, 243, 240);
+  background-image: url("http://localhost:3000/images/bb.png"),url("http://localhost:3000/images/sb.png"),url("http://localhost:3000/images/pd.png"),url("http://localhost:3000/images/pp.png");
+  background-size: 300px,200px,200px,200px;
+  background-position: right bottom,left bottom,right top, left top;
+  background-repeat: no-repeat, no-repeat;
+
+}
+.example-header-image {
+  /* background-image: url("C:\Users\Kashish\Pictures\iconContact.png"); */
+  background-size: cover;
+}
+.login_action{
+
+  position: relative;
+  top:100px;
+  left:100px;
+}
+
+.showPass
+{
+  color: brown;
+  position: relative;
+  top:10px;
+  left: 100px;
+}
+div.forgotpass{
+  color: blue;
+  text-decoration-line: underline;
+}

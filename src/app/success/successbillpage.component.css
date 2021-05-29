@@ -1,0 +1,81 @@
+.grid-container {
+  margin: 20px;
+}
+
+.dashboard-card {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+}
+
+.more-button {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+}
+
+.dashboard-card-content {
+  text-align: center;
+}
+
+table {
+  width: 100%;
+  mask-border-width: unset;
+}
+
+td,
+th {
+  width: 25%;
+}
+
+.mat-header-cell {
+  flex-direction: column;
+  justify-content: center;
+}
+
+.mat-cell {
+  text-align: center;
+  justify-content: center;
+}
+
+.th1 {
+  font-size: large;
+  color: black;
+  border-bottom: 50% black;
+}
+.th2 {
+  font-size: large;
+}
+.l1 {
+  margin-right: 90%;
+  font-size: large;
+  font-weight: bold;
+}
+.l2 {
+  margin-right: 79%;
+  font-size: medium;
+  font-weight: normal;
+}
+.l3 {
+  margin-right: 87.5%;
+  font-size: medium;
+  font-weight: normal;
+}
+.l4 {
+  margin-right: 81%;
+  font-size: medium;
+  font-weight: normal;
+}
+.l5 {
+  margin-right: 77%;
+  font-size: medium;
+  font-weight: normal;
+}
+mat-label{
+  margin-right: 88%;
+  font-size: small;
+  font-weight: lighter;
+}
+

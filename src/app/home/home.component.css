@@ -1,0 +1,56 @@
+.example-card {
+  max-width: 400px;
+}
+
+.example-header-image {
+
+  background-size: cover;
+}
+
+div.homebackground0
+{
+  cursor: pointer;
+  background-image: url("../../assets/stationeryimage.jpg");
+  background-size: 1000px;
+  background-repeat: no-repeat;
+  width: 1000px;
+  height: 500px;
+}
+div.homebackground00
+{
+
+  position: relative;
+  top: 40%;
+  left: 40%;
+  background-color: white;
+  border: 3px solid black;
+  opacity: 0.9;
+  width: 200px;
+  height: 100px;
+  font-size: xx-large;
+  font-family: fantasy;
+  color:black;
+}
+
+div.homebackground10
+{
+  position: relative;
+  top: 40%;
+  left: 40%;
+  background-color: black;
+  border: 3px solid white;
+  opacity: 0.9;
+  width: 200px;
+  height: 100px;
+  font-size: xx-large;
+  font-family: fantasy;
+  color:white;
+}
+div.homebackground1
+{cursor: pointer;
+  background-image: url("../../assets/booksimage.jpg");
+  background-size: 1000px;
+  background-repeat: no-repeat;
+  width: 1000px;
+  height: 500px;
+}

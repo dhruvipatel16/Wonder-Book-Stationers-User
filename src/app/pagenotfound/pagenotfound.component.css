@@ -1,0 +1,17 @@
+button{
+  position: absolute;
+  width: 30%;
+  top: 20%;
+  left: 25%;
+
+}
+
+body.site{
+
+  background-image: url("../../assets/images/404error.gif");
+  background-size: 80%;
+
+  background-repeat: no-repeat;
+
+
+}

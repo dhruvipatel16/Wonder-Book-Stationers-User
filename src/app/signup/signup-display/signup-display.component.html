@@ -1,0 +1,60 @@
+
+  <div class="container">
+    <h1>SignUp Page</h1>
+
+    <form [formGroup]="signUpForm" (ngSubmit)="onSignUp()">
+
+      <div class="form-group">
+        Email:
+      <input class="form-control" formControlName="user_email" placeholder="Enter Your Email">
+      <label class="alert alert-danger" *ngIf="signUpForm.get('user_email').hasError('required') && !signUpForm.get('user_email').pristine" >Email is required</label>
+      <label class="alert alert-danger" *ngIf="signUpForm.get('user_email').hasError('email') && !signUpForm.get('user_email').pristine" >Email is Invalid</label>
+    </div>
+    <div formGroupName="password_group" class="form-group" >
+      Password:
+      <input class="form-control" type="password" placeholder="Enter Password" formControlName="user_password"  >
+      <input class="form-control" type="password" placeholder="Enter confirm Password" formControlName="user_confirm_password" >
+      <label class="alert alert-danger" *ngIf="signUpForm.get('password_group').hasError('PasswordMatch')">Both password and confirm password should be same.</label>
+      <label class="alert alert-danger" *ngIf="signUpForm.get('password_group').get('user_password').hasError('minlength')">Password > 5</label>
+
+    </div>
+
+
+      <div class="form-group">
+        Name:
+      <input class="form-control" formControlName="customer_name" placeholder="Enter Your Name">
+      <label class="alert alert-danger" *ngIf="signUpForm.get('customer_name').hasError('required') && !signUpForm.get('customer_name').pristine" >Name is required</label>
+      <label class="alert alert-danger" *ngIf="signUpForm.get('customer_name').hasError('minlength') && !signUpForm.get('customer_name').pristine" >Name shoul be > 5</label>
+      <label class="alert alert-danger" *ngIf="signUpForm.get('customer_name').hasError('pattern') && !signUpForm.get('customer_name').pristine" > Only Chars</label>
+      </div>
+      <div class="form-group">
+        Gender:
+        <input selected type="radio" value="Male" formControlName="customer_gender">Male
+        <input type="radio" value="Female" formControlName="customer_gender">Female
+
+      </div>
+      <div class="form-group">
+        Address:
+      <input class="form-control" formControlName="customer_address" placeholder="Enter Your Address">
+      <label class="alert alert-danger" *ngIf="signUpForm.get('customer_address').hasError('required') && !signUpForm.get('customer_address').pristine" >Address is required</label>
+      </div>
+      <div>
+        Picture:
+        <input type="file" name="customer_photo" (change)="onChange($event)">
+      <label class="alert alert-danger" *ngIf="signUpForm.get('customer_photo').hasError('required') && !signUpForm.get('customer_photo').pristine" >No photo Selected</label>
+
+      </div>
+      <div class="form-group">
+        Mobileno:
+        <input class="form-control" maxlength="10" formControlName="customer_mobileno" placeholder="Enter Your Mobile No">
+        <label class="alert alert-danger" *ngIf="signUpForm.get('customer_mobileno').hasError('required') && !signUpForm.get('customer_mobileno').pristine" >mobile no is required</label>
+        <label class="alert alert-danger" *ngIf="signUpForm.get('customer_mobileno').hasError('maxlength')" >only 10 digits</label>
+        <label class="alert alert-danger" *ngIf="signUpForm.get('customer_mobileno').hasError('pattern') " > Only digits</label>
+       </div>
+          <div class="form-group">
+            <button [disabled]="!signUpForm.valid" type="submit" class="btn btn-primary">SignUP</button>
+            <button (click)="onClick()" type="submit" class="btn btn-primary">Cancel</button>
+
+       </div>
+  </form>
+  </div>

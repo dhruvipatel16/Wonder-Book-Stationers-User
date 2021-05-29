@@ -1,0 +1,14 @@
+mat-form-field {
+  margin-right: 12px;
+}
+.example-form-field {
+  width: 200px;
+}
+div.card{
+  background-color: rgb(250, 250, 250);
+}
+input,textarea,select{
+  font-size: 30px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<body>
+  <!-- site -->
+  <div class="site">
+
+    <div class="site__body">
+      <div class="page-header">
+        <div class="page-header__container container">
+            <div class="page-header__breadcrumb">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index.html"></a> <svg class="breadcrumb-arrow"
+                                width="6px" height="9px">
+                                <use xlink:href="assets/images/sprite.svg#arrow-rounded-right-6x9"></use>
+                            </svg></li>
+
+                    </ol>
+                </nav>
+            </div>
+            <div class="page-header__title">
+                <h1>BLOG POSTS</h1>
+            </div>
+        </div>
+    </div>
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-12 col-lg-9 col-xl-8">
+            <div class="block post post--layout--full" *ngFor="let item of blogData">
+              <div class="post__header post-header post-header--layout--full">
+
+                <div class="post-header__categories"><a><h4>{{item.blog_number}}</h4></a></div>
+                <h1 class="post-header__title">{{item.blog_head}}</h1>
+                <div class="post-header__meta">
+                  <div class="post-header__meta-item">By <a>WBnS</a></div>
+                  <div class="post-header__meta-item"><a >{{item.blog_date | date}}</a></div>
+                </div>
+              </div>
+              <div class="post__featured"><a href="#"><img src="{{imgpath}}{{item.blog_photo}}" alt=""></a></div>
+              <div class="post__content typography typography--expanded">
+                <p>
+                  {{item.blog_paragraph}}
+                </p>
+                <p>
+                  {{item.blog_paragraph2}}
+                </p>
+
+                <blockquote>
+                  <p>{{item.blog_quote}}.</p>
+                </blockquote>
+
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><!-- site__body / end -->
+    <!-- site__footer -->
+
+  </div>
+
+</body>
+
+</html>

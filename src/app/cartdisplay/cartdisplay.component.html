@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<!-- Mirrored from stroyka.html.themeforest.scompiler.ru/themes/black-ltr/cart.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 12 Feb 2020 05:53:15 GMT -->
+<body>
+    <!-- site -->
+    <div class="site">
+        <!-- site__body -->
+        <div class="site__body">
+          <div class="page-header">
+            <div class="page-header__container container">
+                <div class="page-header__breadcrumb">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="index.html"></a> <svg class="breadcrumb-arrow"
+                                    width="6px" height="9px">
+                                    <use xlink:href="assets/images/sprite.svg#arrow-rounded-right-6x9"></use>
+                                </svg></li>
+
+                        </ol>
+                    </nav>
+                </div>
+                <div class="page-header__title">
+                    <h1>My Cart</h1>
+                </div>
+            </div>
+        </div>
+            <div class="cart block">
+              <div *ngIf="emptyFlag">
+                <img src="./../../assets/emptycart.jpg" style="position: relative;left: 30%;">
+              </div>
+                <div class="container" *ngIf="!emptyFlag">
+                    <table class="cart__table cart-table" >
+                        <thead class="cart-table__head">
+                            <tr class="cart-table__row">
+                                <th class="cart-table__column cart-table__column--image">Image</th>
+                                <th class="cart-table__column cart-table__column--product">Product</th>
+                                <th class="cart-table__column cart-table__column--price">Price</th>
+                                <th class="cart-table__column cart-table__column--quantity">Quantity</th>
+                                <th class="cart-table__column cart-table__column--total">Total</th>
+                                <th class="cart-table__column cart-table__column--remove"></th>
+                            </tr>
+                        </thead>
+                        <tbody class="cart-table__body">
+                            <tr *ngFor="let item of arrcartItems;let i=index" class="cart-table__row">
+                                <td class="cart-table__column cart-table__column--image">
+                                  <a href="#"><img
+                                            src="{{imgPath}}{{item.product.product_img}}" alt=""></a></td>
+
+                                <td class="cart-table__column cart-table__column--product"><a href="#"
+                                        class="cart-table__product-name">{{item.product.product_name.toUpperCase()}}</a>
+                                    <ul class="cart-table__options">
+
+                                        <li>Description:{{item.product.product_desc}}</li>
+                                    </ul>
+                                </td>
+                                <td class="cart-table__column cart-table__column--price" data-title="Price">{{item.product.product_price | currency:'INR'}}</td>
+                                <td class="cart-table__column cart-table__column--quantity" data-title="Quantity">
+                                    <div class="input-number">
+                    <input #txtQuantity class="form-control input-number__input"
+                                            type="number" min="1" [value]="item.qty" (keyup)="onQtyChange(item, txtQuantity.value, i)">
+
+                                    </div>
+                                </td>
+                                <td class="cart-table__column cart-table__column--total" data-title="Total">
+                                  {{item.subtotal|currency:'INR'}}
+                                </td>
+                                <td class="cart-table__column cart-table__column--remove"><button type="button"
+                                        class="btn btn-light btn-sm btn-svg-icon"
+                                        (click)="onRemoveFromCart(item,i,txtQuantity.value)"
+                                        ><svg width="12px" height="12px">
+                                            <use xlink:href="assets/images/sprite.svg#cross-12"></use>
+                                        </svg></button></td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+
+                    <div class="row justify-content-end pt-5">
+                        <div class="col-12 col-md-7 col-lg-6 col-xl-5">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h3 class="card-title">Cart Totals</h3>
+                                    <table class="cart__totals">
+                                      <thead class="cart__totals-header">
+                                        <tr>
+                                            <th>Subtotal</th>
+                                            <td>{{GrandTotal | currency:'INR'}}</td>
+                                        </tr>
+                                    </thead><thead class="cart__totals-header">
+                                      <tr>
+                                          <th>Items</th>
+                                          <td>{{NoOfItems}}</td>
+                                      </tr>
+                                  </thead>
+                                        <tbody class="cart__totals-body">
+                                            <tr>
+                                                <th>Shipping</th>
+                                                <td>{{shipCost|currency:'INR'}}<div class="cart__calc-shipping"><a href="#">Calculate
+                                                            Shipping</a></div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                        <tfoot class="cart__totals-footer">
+                                            <tr>
+                                                <th>Total</th>
+                                                <td>{{GrandTotal |currency:'INR'}}</td>
+                                            </tr>
+                                        </tfoot>
+                                    </table><a class="btn btn-primary btn-xl btn-block cart__checkout-button"
+                                        routerLink="/nav/checkout">Proceed to checkout</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart__buttons"><a routerLink="/nav/HomePage" class="btn btn-light">Continue Shopping</a>
+                  <!-- <a      href="#" class="btn btn-primary cart__update-button">Update Cart</a> -->
+                </div>
+            </div>
+        </div><!-- site__body / end -->
+
+    </div><!-- site / end -->
+</body>
+<!-- Mirrored from stroyka.html.themeforest.scompiler.ru/themes/black-ltr/cart.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 12 Feb 2020 05:53:15 GMT -->
+
+</html>

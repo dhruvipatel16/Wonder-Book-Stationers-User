@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<!-- Mirrored from stroyka.html.themeforest.scompiler.ru/themes/black-ltr/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 12 Feb 2020 05:52:42 GMT -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <title>Stroyka</title>
+
+</head>
+<body>
+    <!-- site -->
+    <div class="site">
+<footer class="site__footer">
+  <div class="site-footer">
+      <div class="container">
+          <div class="site-footer__widgets">
+              <div class="row">
+                  <div class="col-12 col-md-6 col-lg-4">
+                      <div class="site-footer__widget footer-contacts">
+                          <h5 class="footer-contacts__title">Contact Us</h5>
+                           <ul class="footer-contacts__contacts">
+                              <li><i class="footer-contacts__icon fas fa-globe-americas"></i>
+                                3, Shreeji Palace,Naranpura, Ahmedabad, Gujarat 380014 INDIA .</li>
+                              <li><i class="footer-contacts__icon far fa-envelope"></i> wonderbooksnstationers@gmail.com
+                              </li>
+                              <li><i class="footer-contacts__icon fas fa-mobile-alt"></i> + 8160753313</li>
+                              <li><i class="footer-contacts__icon far fa-clock"></i> Mon-Sat 10:00Am - 8:30Pm
+                              </li>
+                          </ul>
+                      </div>
+                  </div>
+                  <div class="col-6 col-md-3 col-lg-2">
+                      <div class="site-footer__widget footer-links">
+                          <h5 class="footer-links__title">Information</h5>
+                          <ul class="footer-links__list">
+                              <li class="footer-links__item"><a routerLink="/nav/aboutus" class="footer-links__link">About
+                                      Us</a></li>
+
+
+
+                              <li class="footer-links__item"><a routerLink="/nav/contactus" class="footer-links__link">Contact
+                                      Us</a></li>
+
+                          </ul>
+                      </div>
+                  </div>
+                  <div class="col-6 col-md-3 col-lg-2">
+                      <div class="site-footer__widget footer-links">
+                          <h5 class="footer-links__title">My Account</h5>
+                          <ul class="footer-links__list">
+                              <li class="footer-links__item"><a routerLink="/nav/contactus" class="footer-links__link">Store
+                                      Location</a></li>
+                              <li class="footer-links__item"><a routerLink="/nav/orderDetails" class="footer-links__link">Order
+                                      History</a></li>
+                              <li class="footer-links__item"><a href="#" class="footer-links__link">Wish
+                                      List</a></li>
+                          </ul>
+                      </div>
+                  </div>
+
+              </div>
+          </div>
+          <div class="site-footer__bottom">
+              <div class="site-footer__copyright">Powered by HTML — Design by WBnS</div>
+              <div class="site-footer__payments"><img src="assets/images/payments.png" alt=""></div>
+          </div>
+      </div>
+      <div class="totop">
+          <div class="totop__body">
+              <div class="totop__start"></div>
+              <div class="totop__container container"></div>
+              <div class="totop__end"><button type="button" class="totop__button"><svg width="13px"
+                          height="8px">
+                          <use xlink:href="assets/images/sprite.svg#arrow-rounded-up-13x8"></use>
+                      </svg></button></div>
+          </div>
+      </div>
+  </div>
+</footer><!-- site__footer / end -->
+<div id="quickview-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-xl">
+    <div class="modal-content"></div>
+  </div>
+</div><!-- quickview-modal / end -->
+<!-- mobilemenu -->
+<div class="mobilemenu">
+  <div class="mobilemenu__backdrop"></div>
+  <div class="mobilemenu__body">
+    <div class="mobilemenu__header">
+      <div class="mobilemenu__title">Menu</div><button type="button" class="mobilemenu__close"><svg width="20px"
+          height="20px">
+          <use xlink:href="assets/images/sprite.svg#cross-20"></use>
+        </svg></button>
+    </div>
+    <div class="mobilemenu__content">
+      <ul class="mobile-links mobile-links--level--0" data-collapse
+        data-collapse-opened-class="mobile-links__item--open">
+        <li class="mobile-links__item" data-collapse-item>
+          <div class="mobile-links__item-title"><a routerLink="/nav/HomePage" class="mobile-links__item-link">Home</a>
+          </div>
+        </li>
+        <li class="mobile-links__item" data-collapse-item>
+          <div class="mobile-links__item-title"><a class="mobile-links__item-link">Categoriess</a> <button
+              class="mobile-links__item-toggle" type="button" data-collapse-trigger>
+              <svg
+                class="mobile-links__item-arrow" width="12px" height="7px">
+                <use xlink:href="assets/images/sprite.svg#arrow-rounded-down-12x7"></use>
+              </svg></button></div>
+          <div class="mobile-links__item-sub-links" data-collapse-content>
+            <ul class="mobile-links mobile-links--level--1">
+              <li class="mobile-links__item" data-collapse-item>
+                <div class="mobile-links__item-title"><a class="mobile-links__item-link">Books</a>
+                  <button class="mobile-links__item-toggle" type="button" data-collapse-trigger><svg
+                      class="mobile-links__item-arrow" width="12px" height="7px">
+                      <use xlink:href="assets/images/sprite.svg#arrow-rounded-down-12x7"></use>
+                    </svg></button></div>
+                <div class="mobile-links__item-sub-links" data-collapse-content>
+                  <ul class="mobile-links mobile-links--level--2" *ngFor="let item of bookCatArr">
+                    <li class="mobile-links__item" data-collapse-item>
+                      <div class="mobile-links__item-title">
+                        <a (click)="onCategoryClick(item)" class="mobile-links__item-link">{{item.category_name}}</a>
+                      </div>
+                    </li>
+
+                  </ul>
+                </div>
+              </li>
+              <li class="mobile-links__item" data-collapse-item>
+                <div class="mobile-links__item-title"><a class="mobile-links__item-link">Stationery</a>
+                  <button class="mobile-links__item-toggle" type="button" data-collapse-trigger><svg
+                      class="mobile-links__item-arrow" width="12px" height="7px">
+                      <use xlink:href="assets/images/sprite.svg#arrow-rounded-down-12x7"></use>
+                    </svg></button></div>
+                <div class="mobile-links__item-sub-links" data-collapse-content>
+                  <ul class="mobile-links mobile-links--level--2" *ngFor="let item of statCatArr">
+                    <li class="mobile-links__item" data-collapse-item>
+                      <div class="mobile-links__item-title"><a (click)="onCategoryClick(item)" class="mobile-links__item-link">{{item.category_name}}</a></div>
+                    </li>
+
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="mobile-links__item" data-collapse-item>
+          <div class="mobile-links__item-title"><a href="shop-grid-3-columns-sidebar.html"
+              class="mobile-links__item-link">Shop</a> <button class="mobile-links__item-toggle" type="button"
+              data-collapse-trigger><svg class="mobile-links__item-arrow" width="12px" height="7px">
+                <use xlink:href="assets/images/sprite.svg#arrow-rounded-down-12x7"></use>
+              </svg></button></div>
+          <div class="mobile-links__item-sub-links" data-collapse-content>
+            <ul class="mobile-links mobile-links--level--1">
+              <li class="mobile-links__item" data-collapse-item>
+                <div class="mobile-links__item-title"><a routerLink="/nav/carts" class="mobile-links__item-link">Cart</a>
+                </div>
+              </li>
+              <li class="mobile-links__item" data-collapse-item>
+                <div class="mobile-links__item-title"><a routerLink="/nav/checkout"
+                    class="mobile-links__item-link">Checkout</a></div>
+              </li>
+              <li class="mobile-links__item" data-collapse-item>
+                <div class="mobile-links__item-title"><a href="wishlist.html"
+                    class="mobile-links__item-link">Wishlist</a></div>
+              </li>
+              <!-- <li class="mobile-links__item" data-collapse-item>
+                <div class="mobile-links__item-title"><a href="compare.html"
+                    class="mobile-links__item-link">Compare</a></div>
+              </li> -->
+              <!-- <li class="mobile-links__item" data-collapse-item>
+                <div class="mobile-links__item-title"><a href="track-order.html" class="mobile-links__item-link">Track
+                    Order</a></div>
+              </li> -->
+            </ul>
+          </div>
+        </li>
+        <li class="mobile-links__item" data-collapse-item>
+          <div class="mobile-links__item-title"><a routerLink="/nav/AccountDashBoard"
+              class="mobile-links__item-link">Account</a> <button class="mobile-links__item-toggle" type="button"
+              data-collapse-trigger><svg class="mobile-links__item-arrow" width="12px" height="7px">
+                <use xlink:href="assets/images/sprite.svg#arrow-rounded-down-12x7"></use>
+              </svg></button></div>
+          <div class="mobile-links__item-sub-links" data-collapse-content>
+            <ul class="mobile-links mobile-links--level--1">
+
+              <li class="mobile-links__item" data-collapse-item>
+                <div class="mobile-links__item-title"><a routerLink="/nav/AccountDashBoard"
+                    class="mobile-links__item-link">Dashboard</a></div>
+              </li>
+              <li class="mobile-links__item" data-collapse-item>
+                <div class="mobile-links__item-title"><a routerLink="/nav/edit"
+                    class="mobile-links__item-link">Edit Profile</a></div>
+              </li>
+              <li class="mobile-links__item" data-collapse-item>
+                <div class="mobile-links__item-title"><a routerLink="/nav/orderDetails"
+                    class="mobile-links__item-link">Order History</a></div>
+              </li>
+
+              <li class="mobile-links__item" data-collapse-item>
+                <div class="mobile-links__item-title"><a routerLink="/nav/changePassword"
+                    class="mobile-links__item-link">Change Password</a></div>
+              </li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="mobile-links__item" data-collapse-item>
+          <div class="mobile-links__item-title"><a href="#" class="mobile-links__item-link">Pages</a> <button
+              class="mobile-links__item-toggle" type="button" data-collapse-trigger><svg
+                class="mobile-links__item-arrow" width="12px" height="7px">
+                <use xlink:href="assets/images/sprite.svg#arrow-rounded-down-12x7"></use>
+              </svg></button></div>
+          <div class="mobile-links__item-sub-links" data-collapse-content>
+            <ul class="mobile-links mobile-links--level--1">
+              <li class="mobile-links__item" data-collapse-item>
+                <div class="mobile-links__item-title"><a routerLink="/nav/aboutus" class="mobile-links__item-link">About
+                    Us</a></div>
+              </li>
+              <li class="mobile-links__item" data-collapse-item>
+                <div class="mobile-links__item-title"><a routerLink="/nav/contactus"
+                    class="mobile-links__item-link">Contact Us</a></div>
+              </li>
+
+              <li class="mobile-links__item" data-collapse-item>
+                <div class="mobile-links__item-title"><a routerLink="/nav/faq" class="mobile-links__item-link">FAQ</a></div>
+              </li>
+
+            </ul>
+          </div>
+        </li>
+        <li class="mobile-links__item" data-collapse-item>
+          <div class="mobile-links__item-title"><a data-collapse-trigger class="mobile-links__item-link">Currency</a>
+            <button class="mobile-links__item-toggle" type="button" data-collapse-trigger><svg
+                class="mobile-links__item-arrow" width="12px" height="7px">
+                <use xlink:href="assets/images/sprite.svg#arrow-rounded-down-12x7"></use>
+              </svg></button></div>
+          <div class="mobile-links__item-sub-links" data-collapse-content>
+            <ul class="mobile-links mobile-links--level--1">
+              <li class="mobile-links__item" data-collapse-item>
+                <div class="mobile-links__item-title"><a href="#" class="mobile-links__item-link">€ Euro</a></div>
+              </li>
+              <li class="mobile-links__item" data-collapse-item>
+                <div class="mobile-links__item-title"><a href="#" class="mobile-links__item-link">£ Pound Sterling</a>
+                </div>
+              </li>
+              <li class="mobile-links__item" data-collapse-item>
+                <div class="mobile-links__item-title"><a href="#" class="mobile-links__item-link">$ US Dollar</a>
+                </div>
+              </li>
+              <li class="mobile-links__item" data-collapse-item>
+                <div class="mobile-links__item-title"><a href="#" class="mobile-links__item-link">₽ Russian Ruble</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="mobile-links__item" data-collapse-item>
+          <div class="mobile-links__item-title"><a data-collapse-trigger class="mobile-links__item-link">Language</a>
+            <button class="mobile-links__item-toggle" type="button" data-collapse-trigger><svg
+                class="mobile-links__item-arrow" width="12px" height="7px">
+                <use xlink:href="assets/images/sprite.svg#arrow-rounded-down-12x7"></use>
+              </svg></button></div>
+          <div class="mobile-links__item-sub-links" data-collapse-content>
+            <ul class="mobile-links mobile-links--level--1">
+              <li class="mobile-links__item" data-collapse-item>
+                <div class="mobile-links__item-title"><a href="#" class="mobile-links__item-link">English</a></div>
+              </li>
+              <li class="mobile-links__item" data-collapse-item>
+                <div class="mobile-links__item-title"><a href="#" class="mobile-links__item-link">French</a></div>
+              </li>
+              <li class="mobile-links__item" data-collapse-item>
+                <div class="mobile-links__item-title"><a href="#" class="mobile-links__item-link">German</a></div>
+              </li>
+              <li class="mobile-links__item" data-collapse-item>
+                <div class="mobile-links__item-title"><a href="#" class="mobile-links__item-link">Russian</a></div>
+              </li>
+              <li class="mobile-links__item" data-collapse-item>
+                <div class="mobile-links__item-title"><a href="#" class="mobile-links__item-link">Italian</a></div>
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div><!-- mobilemenu / end -->
+<!-- photoswipe -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="pswp__bg"></div>
+  <div class="pswp__scroll-wrap">
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    <div class="pswp__ui pswp__ui--hidden">
+      <div class="pswp__top-bar">
+        <div class="pswp__counter"></div><button class="pswp__button pswp__button--close"
+          title="Close (Esc)"></button>
+        <!--<button class="pswp__button pswp__button&#45;&#45;share" title="Share"></button>--> <button
+          class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button> <button
+          class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+        <div class="pswp__preloader">
+          <div class="pswp__preloader__icn">
+            <div class="pswp__preloader__cut">
+              <div class="pswp__preloader__donut"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+        <div class="pswp__share-tooltip"></div>
+      </div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button> <button
+        class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+      <div class="pswp__caption">
+        <div class="pswp__caption__center"></div>
+      </div>
+    </div>
+  </div>
+</div><!-- photoswipe / end -->
+</div><!-- photoswipe / end -->
+<!-- js -->
+<script src="assets/vendor/jquery/jquery.min.js"></script>
+<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/vendor/owl-carousel/owl.carousel.min.js"></script>
+<script src="assets/vendor/nouislider/nouislider.min.js"></script>
+<script src="assets/vendor/photoswipe/photoswipe.min.js"></script>
+<script src="assets/vendor/photoswipe/photoswipe-ui-default.min.js"></script>
+<script src="assets/vendor/select2/js/select2.min.js"></script>
+<script src="assets/js/number.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/header.js"></script>
+<script src="assets/vendor/svg4everybody/svg4everybody.min.js"></script>
+<script>svg4everybody();</script>
+</body>
+<!-- Mirrored from stroyka.html.themeforest.scompiler.ru/themes/black-ltr/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 12 Feb 2020 05:53:08 GMT -->
+
+</html>

@@ -1,0 +1,81 @@
+<div class="site">
+
+
+  <div class="site__body">
+
+    <div class="block">
+      <div class="container">
+          <div class="product product--layout--standard" data-layout="standard">
+              <div class="product__content">
+                  <!-- .product__gallery -->
+               <!-- .product__gallery -->
+               <div class="product__gallery">
+                <div class="product-gallery">
+                    <div class="product-gallery__featured">
+                      <a href="{{imgPath}}{{product_img}}" target="_blank"><button class="product-gallery__zoom"><svg
+                                width="24px" height="24px">
+                                <use xlink:href="assets/images/sprite.svg#zoom-in-24"></use>
+                            </svg></button></a>
+                            <div class = "gfg">
+                              <p id="my-image"><img src=
+                  "{{imgPath}}{{product_img}}">
+                              </p>
+                          </div>
+
+                    </div>
+
+                </div>
+            </div><!-- .product__gallery / end -->
+                  <!-- .product__info -->
+            <div class="product__info">
+              <div class="product__wishlist-compare">
+                <button type="button" class="btn btn-sm btn-light btn-svg-icon" data-toggle="tooltip"
+                  data-placement="right" title="Wishlist"><svg width="16px" height="16px">
+                    <use xlink:href="assets/images/sprite.svg#wishlist-16"></use>
+                  </svg>
+                </button>
+                 <button type="button" class="btn btn-sm btn-light btn-svg-icon" data-toggle="tooltip"
+                  data-placement="right" title="Compare"><svg width="16px" height="16px">
+                    <use xlink:href="assets/images/sprite.svg#compare-16"></use>
+                  </svg>
+                </button>
+              </div>
+              <h1 class="product__name">{{product_name}}</h1>
+
+              <div class="product__description">{{product_desc}}</div>
+
+              <ul class="product__meta">
+                <li class="product__meta-availability">Availability: <span class="text-success">In Stock</span></li>
+
+              </ul>
+            </div><!-- .product__info / end -->
+            <!-- .product__sidebar -->
+            <div class="product__sidebar">
+              <div class="product__availability">Availability: <span class="text-success">In Stock</span></div>
+              <div class="product__prices">{{product_price|currency:'INR'}}</div><!-- .product__options -->
+              <form class="product__options">
+
+                <div class="form-group product__option">
+                  <div class="product__actions">
+
+                    <div class="product__actions-item product__actions-item--addtocart"><button
+                      (click)="onAddToCart()"    class="btn btn-primary btn-lg">Add to cart</button></div>
+                    <div class="product__actions-item product__actions-item--wishlist"><button type="button" (click)="onAddToCart()"
+                        class="btn btn-secondary btn-svg-icon btn-lg" data-toggle="tooltip" title="Wishlist"><svg
+                          width="16px" height="16px">
+                          <use xlink:href="assets/images/sprite.svg#wishlist-16"></use>
+                        </svg></button></div>
+
+                  </div>
+                </div>
+              </form><!-- .product__options / end -->
+            </div><!-- .product__end -->
+
+          </div>
+        </div>
+
+      </div>
+    </div><!-- .block-products-carousel -->
+
+  </div>
+</div>

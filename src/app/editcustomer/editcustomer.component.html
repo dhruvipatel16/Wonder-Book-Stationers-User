@@ -1,0 +1,134 @@
+<body>
+  <!-- site -->
+  <div class="site">
+    <!-- site__body -->
+    <div class="site__body">
+      <div class="page-header">
+        <div class="page-header__container container">
+          <div class="page-header__breadcrumb">
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html"></a> <svg class="breadcrumb-arrow" width="6px"
+                    height="9px">
+                    <use xlink:href="assets/images/sprite.svg#arrow-rounded-right-6x9"></use>
+                  </svg></li>
+
+              </ol>
+            </nav>
+          </div>
+          <div class="page-header__title">
+            <h1>My Profile</h1>
+          </div>
+        </div>
+      </div>
+      <div class="block">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-lg-3 d-flex">
+              <div class="account-nav flex-grow-1">
+                <h4 class="account-nav__title">Navigation</h4>
+                <ul>
+
+                  <li class="account-nav__item"><a routerLink="/nav/AccountDashBoard">Dashboard</a></li>
+                  <li class="account-nav__item account-nav__item--active"><a routerLink="/nav/edit">Edit Profile</a>
+                  </li>
+                  <li class="account-nav__item"><a routerLink="/nav/orderDetails">Order History</a></li>
+
+                  <li class="account-nav__item"><a routerLink="/nav/changePassword">Password</a></li>
+                  <li class="account-nav__item"><a (click)="onLogOut()">Logout</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-12 col-lg-9 mt-4 mt-lg-0">
+              <div class="card">
+                <div class="card-header">
+                  <h5>Edit Profile</h5>
+                </div>
+                <div class="card-divider"></div>
+                <div class="card-body">
+                  <form [formGroup]="EditCustomerForm" (ngSubmit)="onEditSubmit()" class="container">
+                    <div>
+
+                      <mat-label>Your Email</mat-label>
+                      <input matInput type="text" formControlName="fk_user_email" #email readonly class="form-control"
+                        type="text">
+
+                      <br>
+                      <div>
+
+                        <mat-label>Your Name</mat-label>
+                        <input matInput type="text" formControlName="customer_name" #name class="form-control"
+                          type="text">
+                        <label class="alert alert-danger"
+                          *ngIf="EditCustomerForm.get('customer_name').hasError('required') && !EditCustomerForm.get('customer_name').pristine">Name
+                          is required</label>
+                        <label class="alert alert-danger"
+                          *ngIf="EditCustomerForm.get('customer_name').hasError('minlength') && !EditCustomerForm.get('customer_name').pristine">Name
+                          shoul be > 5</label>
+                        <label class="alert alert-danger"
+                          *ngIf="EditCustomerForm.get('customer_name').hasError('pattern') && !EditCustomerForm.get('customer_name').pristine">
+                          Only Chars</label>
+
+                      </div>
+                      <br>
+<div>
+                      <mat-label>Mobile Number</mat-label>
+                      <input formControlName="customer_mobileno" class="form-control" type="text" minlength="10"
+                        maxlength="10" type="tel" matInput placeholder="Enter Here">
+                        <label class="alert alert-danger"
+                        *ngIf="EditCustomerForm.get('customer_mobileno').hasError('required') && !EditCustomerForm.get('customer_mobileno').pristine">mobile
+                        no is required</label>
+                      <label class="alert alert-danger"
+                        *ngIf="EditCustomerForm.get('customer_mobileno').hasError('pattern') "> Only digits</label>
+                        <label class="alert alert-danger"
+                        *ngIf="EditCustomerForm.get('customer_mobileno').hasError('maxlength') || EditCustomerForm.get('customer_mobileno').hasError('minlength')">only 10 digits</label>
+</div>
+
+                      <br>
+
+                    <div >
+                      <mat-label>Address</mat-label>
+                      <textarea style="height: 100px;width: 270px;" formControlName="customer_address"
+                        class="form-control" matInput placeholder="Enter Your Address">
+
+                    </textarea>
+                    <label class="alert alert-danger" *ngIf="EditCustomerForm.get('customer_address').hasError('required') && !EditCustomerForm.get('customer_address').pristine" >Address is required</label>
+                    </div>
+                      <br>
+                      <div>
+                        <mat-label>Your Gender</mat-label>
+                        <select matInput formControlName="customer_gender" #gender class="form-control">
+                          <option value="Male">Male</option>
+                          <option value="Female">Female</option>
+                        </select>
+                        <label class="alert alert-danger"
+                          *ngIf="EditCustomerForm.get('customer_gender').hasError('required') && !EditCustomerForm.get('customer_gender').pristine">Gender
+                          is required</label>
+                      </div>
+
+                    </div>
+
+                    <h5>Your Picture</h5>
+                    <img mat-card-image style="border-radius: 40px;" width="150" height="150" src="{{customerurl}}"><br>
+                    <input type="file" name="pic" (change)="onChange($event)">
+                    <br>
+                    <button type="submit" mat-fab color="primary" aria-label="Show an example snack-bar">
+                      <mat-icon>done</mat-icon>
+                    </button>
+
+                    <button mat-fab color="primary" (click)="onCancel()">
+                      <mat-icon>cancel</mat-icon>
+                    </button>
+                  </form>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><!-- site__body / end -->
+  </div><!-- site / end -->
+
+
+</body>
